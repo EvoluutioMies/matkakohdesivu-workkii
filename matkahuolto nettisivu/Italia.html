@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <h1>Matkakohteet</h1>
-    <button id="theme-toggle" aria-label="Vaihda teema">🌙</button>
     <button id="menu-toggle" aria-label="Näytä valikko">☰</button>
     <nav id="main-nav">
       <ul>
@@ -20,38 +20,45 @@
         <li><a href="Hawaii.html">Hawai</a></li>
         <li><a href="Alankomaat.html">Alankomaat</a></li>
         <li><a href="canada.html">Kanada</a></li>
-
+        <li><a href="index.html.html">Takaisin Kotisivulle</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section id="MatkaKohteet.FI" class="section-hidden">
-      <h2>MatkaKohteet.FI</h2>
-      <img src="Plane.jpg" alt="Colosseum" class="main-image">
-      <p>Matkakohteet.FI tarjoaa edullisia ja laadukkaita lentoja eri puolille maapalloa tarpeesi mukaan</p>
-      <h3>Nähtävyyksiä ja hotelleja</h3>
-      <ul>
-        <li>Tarjoamme hotelleja jo ennen lentoa jottei sinun tarvitse maassa etsiä sokkona sopivaa sinulle.</li>
-          <li>Nähtävyys turisti opas kuuluu lentoon mukaan!</li>
 
-      </ul>
-      <h3>Hinnasto</h3>
-      <p>Hinnat hyppivät edullisista laadukkaimpiin, 80-1000eur.</p>
-      <h3>Päivät (kauan)</h3>
-      <p>Tarjoamme suosituspäivämäärän ja voit itse lisätä niihin jos haluat.</p>
-      <h3>Lähi hotellit</h3>
-      <p>Hotelleja tarjoamme edullisista laadukkaimpiin, parasta kummaltakin puolelta!</p>
-      <ul>
-          <li>Hotel1 70eur/pv (budjetti) - <a href="Payment2.html">Varaus tapahtuu lentoa tilatessa!</a></li>
-          <li>Hotel2 120eur/pv (Keskiverto) - <a href="Payment2.html">Varaus tapahtuu lentoa tilatessa!</a></li>
-          <li>Hotel3 180eur/Pv (laadukkain) - <a href="Payment2.html">Varaus tapahtuu lentoa tilatessa!</a></li>
-      </ul>
 
     </section>
 
-    
-  </main>
+    <section id="italia" class="section-visible">
+      <h2>Italia</h2>
+      <img src="italy.jpg" alt="Colosseum" class="main-image">
+      <p>Italia tunnetaan historiallisista kaupungeistaan, kauniista maisemistaan ja herkullisesta ruoastaan.</p>
+      <h3>Nähtävyydet</h3>
+      <ul>
+          <li>Colosseum</li>
+          <li>Vatikaanivaltio</li>
+          <li>Venetsian kanavat</li>
+          <li>Amalfin rannikko</li>
+          <li>Milano - Muodin pääkaupunki</li>
+      </ul>
+      <h3>Hinnasto</h3>
+      <p>Lennot alk. 250 €, hotellit alk. 80 €/yö, ruokailu alk. 15 €/ateria.</p>
+      <h3>Päivät (kauan)</h3>
+      <p>Suositeltu vierailun kesto: 3-5 päivää.</p>
+      <h3>Lähi hotellit</h3>
+      <ul>
+          <li>Hotel Rome Center - <a href="Payment2.html">Varaa nyt </a></li>
+          <li>Venice Lagoon Hotel - <a href="Payment2.html">Varaa nyt </a></li>
+          <li>Florence Boutique Stay - <a href="Payment2.html">Varaa nyt </a></li>
+      </ul>
+      <h3>Turistiopas</h3>
+      <p>Paras aika matkustaa on keväällä ja syksyllä, jolloin sää on miellyttävä ja turistimäärät ovat vähäisempiä. Muista maistaa paikallisia pastaruokia ja gelatoa!</p>
+
+    </section>
+
+
+     </main>
 
   <footer>
     <p>&copy; 2025 Matkakohteet.FI – Kaikki oikeudet pidätetään</p>
@@ -87,22 +94,5 @@
       });
     });
   </script>
-
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('theme-toggle');
-    const current = localStorage.getItem('theme') || 
-                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', current);
-    btn.textContent = current === 'dark' ? '☀️' : '🌙';
-
-    btn.addEventListener('click', () => {
-      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-      btn.textContent = theme === 'dark' ? '☀️' : '🌙';
-    });
-  });
-</script>
 </body>
 </html>

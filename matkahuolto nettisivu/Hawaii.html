@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matkakohdesivu</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Matkakohteet</h1>
+    <button id="menu-toggle" aria-label="Näytä valikko">☰</button>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="Italia.html">Italia</a></li>
+        <li><a href="Ruotsi.html">Ruotsi</a></li>
+        <li><a href="Saksa.html">Saksa</a></li>
+        <li><a href="Hawaii.html">Hawai</a></li>
+        <li><a href="Alankomaat.html">Alankomaat</a></li>
+        <li><a href="canada.html">Kanada</a></li>
+        <li><a href="index.html.html">Takaisin Kotisivulle</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    
+
+    
+    <section id="hawaii" class="section-visible">
+      <h2>Hawai</h2>
+      <img src="hawaii.jpg" alt="Hawaijin ranta" class="main-image">
+            <p>Hawai on tunnettu kauniista rannoistaan, trooppisista sademetsistään ja rentouttavasta ilmapiiristään.</p>
+            <h3>Nähtävyydet</h3>
+            <ul>
+                <li>Waikiki Beach</li>
+                <li>Haleakalā-tulivuori</li>
+                <li>Hana Road - Maui</li>
+                <li>Napali Coast</li>
+            </ul>
+            <h3>Hinnasto</h3>
+            <p>Lennot alk. 800 €, hotellit alk. 150 €/yö, ruokailu alk. 25 €/ateria.</p>
+            <h3>Päivät (kauan)</h3>
+            <p>Suositeltu vierailun kesto: 7-10 päivää.</p>
+            <h3>Lähi hotellit</h3>
+            <ul>
+                <li>Waikiki Resort - <a href="Payment2.html">Varaa nyt </a></li>
+                <li>Maui Beachfront Stay - <a href="Payment2.html">Varaa nyt</a></li>
+            </ul>
+            <h3>Turistiopas</h3>
+            <p>Parasta aikaa vierailla Hawaiilla on keväällä ja syksyllä. Tutustu paikalliseen kulttuuriin hula-tanssin ja ukulelen kautta.</p>
+    </section>
+
+     </main>
+
+  <footer>
+    <p>&copy; 2025 Matkakohteet.FI – Kaikki oikeudet pidätetään</p>
+    <nav>
+  <ul>
+    <li><strong><a href="index.html.html">Kotisivu</a></strong></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="clients.html">Our Clients</a></li>
+    <li><a href="products.html">Our Products</a></li>
+    <li><a href="services.html">Our Services</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('menu-toggle');
+      const nav    = document.getElementById('main-nav');
+      toggle.addEventListener('click', () => nav.classList.toggle('active'));
+
+      
+      document.querySelectorAll('.section-hidden').forEach(sec => {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('section-visible');
+              obs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        obs.observe(sec);
+      });
+    });
+  </script>
+</body>
+</html>
